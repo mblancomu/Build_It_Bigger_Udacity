@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BuildItBigger.iml" filepath="$PROJECT_DIR$/BuildItBigger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Build_It_Bigger_Udacity.iml" filepath="$PROJECT_DIR$/Build_It_Bigger_Udacity.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokesjavalib/jokesjavalib.iml" filepath="$PROJECT_DIR$/jokesjavalib/jokesjavalib.iml" />
     </modules>
   </component>
 </project>
