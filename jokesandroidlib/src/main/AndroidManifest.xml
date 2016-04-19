@@ -6,6 +6,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
+        <activity android:name=".MainLibActivity"
+            android:label="@string/app_name"></activity>
+
     </application>
 
 </manifest>

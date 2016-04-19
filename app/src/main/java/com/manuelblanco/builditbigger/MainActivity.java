@@ -1,46 +1,47 @@
 package com.manuelblanco.builditbigger;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-import com.example.Joker;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView mTextJoke;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lib_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTextJoke = (TextView)findViewById(R.id.tv_joke);
+
         setSupportActionBar(toolbar);
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
+        /*AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, getJoke(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //mTextJoke.setText();
+                getJoke();
             }
         });
 
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this,"Manuel"));
     }
 
     @Override
@@ -65,9 +66,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private String getJoke(){
-        Joker joker = new Joker();
-
-        return joker.getJoke();
+    private void getJoke(){
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        new EndpointsAsyncTask(this, progressBar).execute();
     }
 }

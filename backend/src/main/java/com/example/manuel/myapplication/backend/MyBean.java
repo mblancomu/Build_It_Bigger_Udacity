@@ -1,15 +1,18 @@
 package com.example.manuel.myapplication.backend;
 
+import com.example.Joker;
+
 /** The object model for the data we are sending through endpoints */
 public class MyBean {
 
-    private String myData;
+    private Joker myJoke;
 
-    public String getData() {
-        return myData;
+    public MyBean(){
+        myJoke = new Joker();
     }
 
-    public void setData(String data) {
-        myData = data;
+    public String getJoke() {
+        return myJoke.getJoke();
     }
+
 }

@@ -10,14 +10,14 @@ import android.widget.TextView;
 /**
  * Created by manuel on 18/4/16.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainLibActivity extends AppCompatActivity {
 
     public final static String JOKE = "JOKE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_lib_main);
 
         Intent intent = this.getIntent();
 
