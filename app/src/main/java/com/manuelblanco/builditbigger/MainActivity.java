@@ -1,8 +1,10 @@
 package com.manuelblanco.builditbigger;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this,"Manuel"));
     }
 
     @Override
