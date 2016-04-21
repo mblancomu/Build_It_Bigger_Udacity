@@ -17,6 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        freemium {
+            applicationId "com.manuelblanco.builditbigger.freemium"
+        }
+        premium {
+            applicationId "com.manuelblanco.builditbigger.premium"
+        }
+    }
 }
 
 dependencies {

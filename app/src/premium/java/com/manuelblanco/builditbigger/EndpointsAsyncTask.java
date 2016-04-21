@@ -25,7 +25,6 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     private static MyApi myApiService = null;
     private Context context;
     private String mResult;
-    private InterstitialAd mInterstitialAd;
     private ProgressBar mProgressBar;
 
     public EndpointsAsyncTask(Context context, ProgressBar progressBar) {
@@ -62,39 +61,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     protected void onPostExecute(String result) {
         //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         mResult = result;
-        // Setting the interstitial ad
-        mInterstitialAd = new InterstitialAd(context);
-        mInterstitialAd.setAdUnitId(context.getString(R.string.interstitial_ad_unit_id));
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                if (mProgressBar != null) {
-                    mProgressBar.setVisibility(View.GONE);
-                }
-                mInterstitialAd.show();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                super.onAdFailedToLoad(errorCode);
-                if (mProgressBar != null) {
-                    mProgressBar.setVisibility(View.GONE);
-                }
-                startMainActivity();
-            }
-
-            @Override
-            public void onAdClosed() {
-                startMainActivity();
-            }
-        });
-        AdRequest ar = new AdRequest
-                .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice(context.getString(R.string.device_id))
-                .build();
-        mInterstitialAd.loadAd(ar);
+        startMainActivity();
     }
 
     private void startMainActivity() {
