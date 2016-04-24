@@ -26,10 +26,12 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     private Context context;
     private String mResult;
     private ProgressBar mProgressBar;
+    private View mBack;
 
-    public EndpointsAsyncTask(Context context, ProgressBar progressBar) {
+    public EndpointsAsyncTask(Context context, ProgressBar progressBar, View back) {
         this.context = context;
         this.mProgressBar = progressBar;
+        this.mBack = back;
     }
 
     @Override
@@ -37,6 +39,7 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
         super.onPreExecute();
         if (mProgressBar != null) {
             mProgressBar.setVisibility(View.VISIBLE);
+            mBack.setVisibility(View.VISIBLE);
         }
     }
 
@@ -61,6 +64,12 @@ class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> 
     protected void onPostExecute(String result) {
         //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         mResult = result;
+
+        if (mProgressBar != null) {
+            mProgressBar.setVisibility(View.GONE);
+            mBack.setVisibility(View.GONE);
+        }
+
         startMainActivity();
     }
 

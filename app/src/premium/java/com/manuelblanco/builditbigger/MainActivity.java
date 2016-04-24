@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mTextJoke = (TextView)findViewById(R.id.tv_joke);
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
 
         setSupportActionBar(toolbar);
 
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getJoke(){
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        new EndpointsAsyncTask(this, progressBar).execute();
+        View back = (View)findViewById(R.id.view_back);
+        new EndpointsAsyncTask(this, progressBar, back).execute();
     }
 }

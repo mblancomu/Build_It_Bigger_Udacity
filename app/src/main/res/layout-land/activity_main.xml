@@ -28,8 +28,9 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/fab_margin_right"
+        android:layout_marginRight="@dimen/fab_margin_right"
         android:src="@drawable/jokes" />
 
 </android.support.design.widget.CoordinatorLayout>
