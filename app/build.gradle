@@ -17,14 +17,25 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        freemium {
+            applicationId "com.manuelblanco.builditbigger.freemium"
+        }
+        premium {
+            applicationId "com.manuelblanco.builditbigger.premium"
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //Java Library Joker
     compile project(":jokesjavalib")
+    compile project(":jokesandroidlib")
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
     compile 'com.google.android.gms:play-services-ads:8.4.0'
+    compile project(path: ':backend', configuration: 'android-endpoints')
 }

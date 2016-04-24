@@ -2,5 +2,8 @@
     <string name="app_name">Build It Bigger!!</string>
     <string name="action_settings">Settings</string>
     <string name="banner_ad_unit_id">ca-app-pub-6132799081209868/9015045837</string>
+    <string name="interstitial_ad_unit_id" translatable="false"></string>
+    <string name="device_id" translatable="false">3A886BB3E83222B2DB45A088675CBB0C</string>
     <string name="get_joke_info">Push on Floating Button for get a Joke!!!</string>
+    <string name="root_url_api" translatable="false">https://warm-braid-128619.appspot.com/_ah/api/</string>
 </resources>
