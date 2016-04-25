@@ -13,7 +13,7 @@ public class EmptyStringTest extends AndroidTestCase {
     public void test() {
 
         String result = null;
-        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext(), null);
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getContext(), null,null);
         endpointsAsyncTask.execute();
 
         try {
