@@ -9,9 +9,6 @@ import android.widget.ProgressBar;
 
 import com.example.manuel.myapplication.backend.myApi.MyApi;
 import com.example.manuel.myapplication.backend.myApi.model.MyBean;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.manuelblanco.jokesandroidlib.MainLibActivity;
